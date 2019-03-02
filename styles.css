@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div, nav, ul {
+    margin: auto;
+    text-align: center;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    background-color: #4b7bec;
+    margin: 0 10px;
+    padding: 0 10px;
+    font-size: 30px;
+    color: #fff;
+}
+
+ul {
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    list-style: none;
+    font-size: 25px;
+}
+
+.stopwatch {
+    margin-top: 20px;
+    font-size: 40px;
+    color: #eb3b5a;
+}
+
+.mark-score {
+    background-color: #eb3b5a;
+    color: #fff;
+}
