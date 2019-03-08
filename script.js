@@ -1,6 +1,6 @@
 class Stopwatch extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             running: false,
             times: {
@@ -78,7 +78,7 @@ class Stopwatch extends React.Component {
         let element = document.createElement("li");
         element.innerText = this.format(this.state.times);
         document.querySelector(".results").appendChild(element);
-        setTimeout(() => document.querySelector(".stopwatch").classList.remove("mark-score"));
+        setTimeout(() => document.querySelector(".stopwatch").classList.remove("mark-score"), 500);
     }
 
     eraseList() {
@@ -90,18 +90,17 @@ class Stopwatch extends React.Component {
 
     render() {
         return (
-            React.createElement("nav", {className: "main"},
-                React.createElement("button", {onClick: this.start, id: "start"}, "Start"),
-                React.createElement("button", {onClick: this.stop, id: "stop"}, "Stop"),
-                React.createElement("button", {onClick: this.reset, id: "reset"}, "Reset"),
-                React.createElement("button", {onClick: this.addToList, id: "add-score"}, "Add score"),
-                React.createElement("button", {onClick: this.eraseList, id: "clear"}, "Clear scores"),
-                React.createElement("div", {className: "stopwatch"}, this.format(this.state.times)),
-                React.createElement("ul", {className: "results"})
-            )
+            <nav className="main">
+                <button onClick={this.start.bind(this)} id="start">Start</button>
+                <button onClick={this.stop.bind(this)} id="stop">Stop</button>
+                <button onClick={this.reset.bind(this)} id="reset">Reset</button>
+                <button onClick={this.addToList.bind(this)} id="add-score">Add score</button>
+                <button onClick={this.eraseList.bind(this)} id="clear">Clear scores</button>
+                <div className="stopwatch">{this.format(this.state.times)}</div>
+                <ul className="results"></ul>
+            </nav>
         )
     }
 }
 
-let app = React.createElement(Stopwatch);
-ReactDOM.render(app, document.getElementById("app"));
+ReactDOM.render(<Stopwatch/>, document.getElementById("app"));

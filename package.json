@@ -2,10 +2,11 @@
   "name": "es6-stopwatch",
   "version": "1.0.0",
   "description": "stopwatch",
-  "main": "script.js",
+  "main": "script-compiled.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel script.js --watch --out-file script-compiled.js"
+    "start": "babel scriptES5.js --watch --out-file script-compiled.js",
+    "build": "babel script.js --watch --out-file build.js"
   },
   "repository": {
     "type": "git",
