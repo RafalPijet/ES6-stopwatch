@@ -20,7 +20,7 @@ class Stopwatch extends React.Component {
         return result;
     }
 
-    format(times) {
+    format() {
         return `${this.pad0(this.state.times.minutes)}:${this.pad0(this.state.times.seconds)}:${this.pad0(Math.floor(this.state.times.miliseconds))}`;
     }
 

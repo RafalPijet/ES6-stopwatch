@@ -39,7 +39,7 @@ var Stopwatch = function (_React$Component) {
         }
     }, {
         key: "format",
-        value: function format(times) {
+        value: function format() {
             return this.pad0(this.state.times.minutes) + ":" + this.pad0(this.state.times.seconds) + ":" + this.pad0(Math.floor(this.state.times.miliseconds));
         }
     }, {
